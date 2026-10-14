@@ -10,9 +10,10 @@ from sqlalchemy.exc import IntegrityError, OperationalError
 
 from app.config import Settings
 from app.db import Database
-from app.models import BankTransaction, Invoice
+from app.models import BankTransaction, FinancialException, Invoice, Proposal
 from app.schemas import ImportData
 from app.services.importing import DomainError, import_data
+from app.services.reconciliation import proposal_view, reconcile
 
 FIXTURE = Path(__file__).resolve().parents[2] / "data/synthetic/records.json"
 
@@ -88,6 +89,26 @@ def create_app(settings=None):
     def transactions():
         with db.session() as session:
             return list(session.scalars(select(BankTransaction).order_by(BankTransaction.id)))
+
+    @app.post("/api/reconcile")
+    def run_reconciliation(request: Request):
+        with db.session(write=True) as session:
+            return reconcile(session, request.state.correlation_id)
+
+    @app.get("/api/proposals")
+    def proposals():
+        with db.session() as session:
+            return [
+                proposal_view(session, p)
+                for p in session.scalars(select(Proposal).order_by(Proposal.created_at))
+            ]
+
+    @app.get("/api/exceptions")
+    def exceptions():
+        with db.session() as session:
+            return list(
+                session.scalars(select(FinancialException).order_by(FinancialException.created_at))
+            )
 
     return app
 
