@@ -8,6 +8,7 @@ from fastapi.responses import JSONResponse
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError, OperationalError
 
+from app.api import router
 from app.config import Settings
 from app.db import Database
 from app.models import BankTransaction, FinancialException, Invoice, Proposal
@@ -110,6 +111,7 @@ def create_app(settings=None):
                 session.scalars(select(FinancialException).order_by(FinancialException.created_at))
             )
 
+    app.include_router(router)
     return app
 
 
