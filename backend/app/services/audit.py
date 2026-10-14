@@ -1,3 +1,5 @@
+from sqlalchemy import event
+
 from app.models import AuditEvent
 
 
@@ -25,3 +27,12 @@ def audit(
             correlation_id=correlation_id,
         )
     )
+
+
+# Application-level protection only; database administrators can still alter SQLite.
+
+
+@event.listens_for(AuditEvent, "before_update")
+@event.listens_for(AuditEvent, "before_delete")
+def reject_audit_mutation(mapper, connection, target):
+    raise ValueError("Audit events are append-only through the application")

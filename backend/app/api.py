@@ -6,7 +6,6 @@ from collections import defaultdict
 from fastapi import APIRouter, Depends, File, Header, Query, Request, UploadFile
 from pydantic import ValidationError
 from sqlalchemy import select
-from sqlalchemy.exc import IntegrityError
 
 from app.models import (
     AuditEvent,
@@ -57,7 +56,7 @@ def apply_proposal(
                 actor,
                 request.state.correlation_id,
             )
-    except (DomainError, IntegrityError) as exc:
+    except Exception as exc:
         # The attempted financial transaction rolls back before this separate failure record.
         with request.app.state.db.session(write=True) as session:
             audit(

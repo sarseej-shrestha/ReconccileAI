@@ -136,5 +136,6 @@ def test_failure_rolls_back_all_financial_effects(loaded, monkeypatch):
         assert list(session.scalars(select(LedgerEntry))) == []
         assert session.get(Proposal, p["id"]).status == "APPROVED"
         assert session.get(Invoice, "INV-010").status == "OPEN"
+    assert loaded.get("/api/audit?action=ledger_writeback_failed").json()
     monkeypatch.setattr(ledger, "posting_result", real)
     assert post(loaded, p).json()["additional_entries"] == 2
