@@ -1,0 +1,121 @@
+{
+  "INV-001": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-001"
+    ]
+  },
+  "INV-002": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-002"
+    ]
+  },
+  "INV-003": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-003"
+    ]
+  },
+  "INV-004": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-004"
+    ]
+  },
+  "INV-005": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-005"
+    ]
+  },
+  "INV-006": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-006"
+    ]
+  },
+  "INV-007": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-007"
+    ]
+  },
+  "INV-008": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-008"
+    ]
+  },
+  "INV-009": {
+    "classification": "date_window",
+    "transaction_ids": [
+      "TX-009"
+    ]
+  },
+  "INV-010": {
+    "classification": "split_payment",
+    "transaction_ids": [
+      "TX-010",
+      "TX-011"
+    ]
+  },
+  "INV-011": {
+    "classification": "duplicate_transactions",
+    "transaction_ids": []
+  },
+  "INV-012": {
+    "classification": "missing_payment",
+    "transaction_ids": []
+  },
+  "INV-013": {
+    "classification": "overpayment",
+    "transaction_ids": []
+  },
+  "INV-014": {
+    "classification": "partial_payment",
+    "transaction_ids": []
+  },
+  "INV-015": {
+    "classification": "underpayment",
+    "transaction_ids": []
+  },
+  "INV-016": {
+    "classification": "cross_currency",
+    "transaction_ids": []
+  },
+  "INV-017": {
+    "classification": "conflicting_references",
+    "transaction_ids": []
+  },
+  "INV-018": {
+    "classification": "conflicting_references",
+    "transaction_ids": []
+  },
+  "INV-019": {
+    "classification": "ambiguous_counterparty",
+    "transaction_ids": []
+  },
+  "INV-020": {
+    "classification": "ambiguous_counterparty",
+    "transaction_ids": []
+  },
+  "INV-021": {
+    "classification": "outside_date_window",
+    "transaction_ids": []
+  },
+  "INV-022": {
+    "classification": "reference_exact",
+    "transaction_ids": [
+      "TX-022"
+    ]
+  },
+  "INV-023": {
+    "classification": "payment_direction",
+    "transaction_ids": []
+  },
+  "INV-024": {
+    "classification": "unsupported_reference",
+    "transaction_ids": []
+  }
+}

@@ -1,0 +1,586 @@
+{
+  "invoices": [
+    {
+      "id": "INV-001",
+      "invoice_number": "INV-001",
+      "counterparty": "Fable Company 01",
+      "amount_cents": 11000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-002",
+      "invoice_number": "INV-002",
+      "counterparty": "Fable Company 02",
+      "amount_cents": 12000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-003",
+      "invoice_number": "INV-003",
+      "counterparty": "Fable Company 03",
+      "amount_cents": 13000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-004",
+      "invoice_number": "INV-004",
+      "counterparty": "Fable Company 04",
+      "amount_cents": 14000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-005",
+      "invoice_number": "INV-005",
+      "counterparty": "Fable Company 05",
+      "amount_cents": 15000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-006",
+      "invoice_number": "INV-006",
+      "counterparty": "Fable Company 06",
+      "amount_cents": 16000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-007",
+      "invoice_number": "INV-007",
+      "counterparty": "Fable Company 07",
+      "amount_cents": 17000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-008",
+      "invoice_number": "INV-008",
+      "counterparty": "Fable Company 08",
+      "amount_cents": 18000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-009",
+      "invoice_number": "INV-009",
+      "counterparty": "Fable Company 09",
+      "amount_cents": 19000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-010",
+      "invoice_number": "INV-010",
+      "counterparty": "Fable Company 10",
+      "amount_cents": 125000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-011",
+      "invoice_number": "INV-011",
+      "counterparty": "Fable Company 11",
+      "amount_cents": 21000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-012",
+      "invoice_number": "INV-012",
+      "counterparty": "Fable Company 12",
+      "amount_cents": 22000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-013",
+      "invoice_number": "INV-013",
+      "counterparty": "Fable Company 13",
+      "amount_cents": 23000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-014",
+      "invoice_number": "INV-014",
+      "counterparty": "Fable Company 14",
+      "amount_cents": 24000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-015",
+      "invoice_number": "INV-015",
+      "counterparty": "Fable Company 15",
+      "amount_cents": 25000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-016",
+      "invoice_number": "INV-016",
+      "counterparty": "Fable Company 16",
+      "amount_cents": 26000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-017",
+      "invoice_number": "INV-017",
+      "counterparty": "Fable Company 17",
+      "amount_cents": 27000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-018",
+      "invoice_number": "INV-018",
+      "counterparty": "Fable Company 18",
+      "amount_cents": 28000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-019",
+      "invoice_number": "INV-019",
+      "counterparty": "Fable Orchard Labs",
+      "amount_cents": 33000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-020",
+      "invoice_number": "INV-020",
+      "counterparty": "Fable Orchard Labs",
+      "amount_cents": 33000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-021",
+      "invoice_number": "INV-021",
+      "counterparty": "Fable Company 21",
+      "amount_cents": 31000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-022",
+      "invoice_number": "INV-022",
+      "counterparty": "Fable Company 22",
+      "amount_cents": 32000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "payable"
+    },
+    {
+      "id": "INV-023",
+      "invoice_number": "INV-023",
+      "counterparty": "Fable Company 23",
+      "amount_cents": 33000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    },
+    {
+      "id": "INV-024",
+      "invoice_number": "INV-024",
+      "counterparty": "Fable Company 24",
+      "amount_cents": 34000,
+      "currency": "USD",
+      "issue_date": "2026-09-01",
+      "due_date": "2026-09-30",
+      "kind": "receivable"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TX-001",
+      "external_reference": "FICTIONAL-0001",
+      "counterparty": "Fable Company 01",
+      "amount_cents": 11000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-001",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-002",
+      "external_reference": "FICTIONAL-0002",
+      "counterparty": "Fable Company 02",
+      "amount_cents": 12000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-002",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-003",
+      "external_reference": "FICTIONAL-0003",
+      "counterparty": "Fable Company 03",
+      "amount_cents": 13000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-003",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-004",
+      "external_reference": "FICTIONAL-0004",
+      "counterparty": "Fable Company 04",
+      "amount_cents": 14000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-004",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-005",
+      "external_reference": "FICTIONAL-0005",
+      "counterparty": "Fable Company 05",
+      "amount_cents": 15000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-005",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-006",
+      "external_reference": "FICTIONAL-0006",
+      "counterparty": "Fable Company 06",
+      "amount_cents": 16000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-006",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-007",
+      "external_reference": "FICTIONAL-0007",
+      "counterparty": "Fable Company 07",
+      "amount_cents": 17000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-007",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-008",
+      "external_reference": "FICTIONAL-0008",
+      "counterparty": "Fable Company 08",
+      "amount_cents": 18000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-008",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-009",
+      "external_reference": "FICTIONAL-0009",
+      "counterparty": "Fable Company 09",
+      "amount_cents": 19000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Customer payment",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-010",
+      "external_reference": "FICTIONAL-0010",
+      "counterparty": "Fable Company 10",
+      "amount_cents": 75000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-010",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-011",
+      "external_reference": "FICTIONAL-0011",
+      "counterparty": "Fable Company 10",
+      "amount_cents": 50000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-010",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-012",
+      "external_reference": "FICTIONAL-0012",
+      "counterparty": "Fable Company 11",
+      "amount_cents": 21000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-011",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-013",
+      "external_reference": "FICTIONAL-0013",
+      "counterparty": "Fable Company 11",
+      "amount_cents": 21000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-011",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-014",
+      "external_reference": "FICTIONAL-0014",
+      "counterparty": "Fable Company 13",
+      "amount_cents": 150000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-013",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-015",
+      "external_reference": "FICTIONAL-0015",
+      "counterparty": "Fable Company 14",
+      "amount_cents": 10000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-014",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-016",
+      "external_reference": "FICTIONAL-0016",
+      "counterparty": "Fable Company 14",
+      "amount_cents": 5000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-014",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-017",
+      "external_reference": "FICTIONAL-0017",
+      "counterparty": "Fable Company 15",
+      "amount_cents": 17000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-015",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-018",
+      "external_reference": "FICTIONAL-0018",
+      "counterparty": "Fable Company 16",
+      "amount_cents": 26000,
+      "currency": "EUR",
+      "date": "2026-09-15",
+      "description": "INV-016",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-019",
+      "external_reference": "FICTIONAL-0019",
+      "counterparty": "Fable Company 17",
+      "amount_cents": 27000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-017 INV-018",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-020",
+      "external_reference": "FICTIONAL-0020",
+      "counterparty": "Fable Orchard Labs",
+      "amount_cents": 33000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Orchard payment",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-021",
+      "external_reference": "FICTIONAL-0021",
+      "counterparty": "Fable Company 21",
+      "amount_cents": 31000,
+      "currency": "USD",
+      "date": "2025-01-10",
+      "description": "INV-021",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-022",
+      "external_reference": "FICTIONAL-0022",
+      "counterparty": "Fable Company 22",
+      "amount_cents": -32000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-022",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-023",
+      "external_reference": "FICTIONAL-0023",
+      "counterparty": "Fable Company 23",
+      "amount_cents": -33000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-023",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-024",
+      "external_reference": "FICTIONAL-0024",
+      "counterparty": "Fable Company 24",
+      "amount_cents": 34000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "INV-UNKNOWN",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-025",
+      "external_reference": "FICTIONAL-0025",
+      "counterparty": "Fable Unknown 0",
+      "amount_cents": 4000,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-026",
+      "external_reference": "FICTIONAL-0026",
+      "counterparty": "Fable Unknown 1",
+      "amount_cents": 4100,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-027",
+      "external_reference": "FICTIONAL-0027",
+      "counterparty": "Fable Unknown 2",
+      "amount_cents": 4200,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-028",
+      "external_reference": "FICTIONAL-0028",
+      "counterparty": "Fable Unknown 3",
+      "amount_cents": 4300,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-029",
+      "external_reference": "FICTIONAL-0029",
+      "counterparty": "Fable Unknown 4",
+      "amount_cents": 4400,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-030",
+      "external_reference": "FICTIONAL-0030",
+      "counterparty": "Fable Unknown 5",
+      "amount_cents": 4500,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-031",
+      "external_reference": "FICTIONAL-0031",
+      "counterparty": "Fable Unknown 6",
+      "amount_cents": 4600,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-032",
+      "external_reference": "FICTIONAL-0032",
+      "counterparty": "Fable Unknown 7",
+      "amount_cents": 4700,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-033",
+      "external_reference": "FICTIONAL-0033",
+      "counterparty": "Fable Unknown 8",
+      "amount_cents": 4800,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    },
+    {
+      "id": "TX-034",
+      "external_reference": "FICTIONAL-0034",
+      "counterparty": "Fable Unknown 9",
+      "amount_cents": 4900,
+      "currency": "USD",
+      "date": "2026-09-15",
+      "description": "Unallocated fictional receipt",
+      "source": "Fictional Demo Bank"
+    }
+  ]
+}
