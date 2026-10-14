@@ -106,3 +106,12 @@ async def import_csv(
         return import_data(session, data, request.state.correlation_id)
 
 
+@router.post("/exceptions/{exception_id}/investigate")
+def investigate_exception(exception_id: str, request: Request):
+    from app.services.investigation import CompatibleProvider, investigate
+
+    settings = request.app.state.settings
+    provider = getattr(request.app.state, "investigation_provider", None)
+    if provider is None and settings.llm_api_key:
+        provider = CompatibleProvider(settings)
+    return investigate(request.app.state.db, exception_id, request.state.correlation_id, provider)
