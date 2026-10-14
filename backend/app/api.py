@@ -17,8 +17,10 @@ from app.models import (
     Proposal,
 )
 from app.schemas import ApplyRequest, ImportData, ReviewRequest
+from app.services.approvals import review
 from app.services.audit import audit
 from app.services.importing import DomainError, import_data
+from app.services.ledger import apply
 
 router = APIRouter(prefix="/api")
 
@@ -27,6 +29,49 @@ def reviewer(request: Request, x_reviewer_token: str = Header(default="")):
     if not secrets.compare_digest(x_reviewer_token, request.app.state.settings.demo_reviewer_token):
         raise DomainError("Demo reviewer token required (simulated authentication)", 403)
     return "demo-reviewer"
+
+
+@router.post("/proposals/{proposal_id}/review")
+def review_proposal(
+    proposal_id: str, body: ReviewRequest, request: Request, actor=Depends(reviewer)
+):
+    with request.app.state.db.session(write=True) as session:
+        return review(session, proposal_id, body, actor, request.state.correlation_id)
+
+
+@router.post("/proposals/{proposal_id}/apply")
+def apply_proposal(
+    proposal_id: str,
+    body: ApplyRequest,
+    request: Request,
+    idempotency_key: str = Header(min_length=8, max_length=128),
+    actor=Depends(reviewer),
+):
+    try:
+        with request.app.state.db.session(write=True) as session:
+            return apply(
+                session,
+                proposal_id,
+                body.version,
+                idempotency_key,
+                actor,
+                request.state.correlation_id,
+            )
+    except (DomainError, IntegrityError) as exc:
+        # The attempted financial transaction rolls back before this separate failure record.
+        with request.app.state.db.session(write=True) as session:
+            audit(
+                session,
+                "ledger_writeback_failed",
+                "proposal",
+                proposal_id,
+                actor=actor,
+                reason=exc.message
+                if isinstance(exc, DomainError)
+                else "Financial constraint rejected posting",
+                correlation_id=request.state.correlation_id,
+            )
+        raise
 
 
 @router.get("/ledger")
