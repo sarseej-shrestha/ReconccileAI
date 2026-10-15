@@ -1,7 +1,7 @@
 export interface Invoice {
   id: string;
   counterparty: string;
-  amount_cents: number;
+  amount_cents: number | string;
   currency: string;
   issue_date: string;
   due_date: string;
@@ -12,7 +12,7 @@ export interface Transaction {
   id: string;
   external_reference: string;
   counterparty: string;
-  amount_cents: number;
+  amount_cents: number | string;
   currency: string;
   date: string;
   description: string;
@@ -21,9 +21,9 @@ export interface Transaction {
 export interface Evidence {
   invoice_ids: string[];
   transaction_ids: string[];
-  difference_cents?: number;
-  candidate_amount_cents?: number;
-  invoice_amount_cents?: number;
+  difference_cents?: number | string;
+  candidate_amount_cents?: number | string;
+  invoice_amount_cents?: number | string;
   currency?: string;
   classification: string;
   explanation: string;
@@ -35,7 +35,7 @@ export interface Proposal {
   invoice_ids: string[];
   transaction_ids: string[];
   matching_method: string;
-  proposed_amount_cents: number;
+  proposed_amount_cents: number | string;
   status: string;
   version: number;
   evidence: Evidence;
@@ -53,7 +53,7 @@ export interface LedgerEntry {
   id: string;
   invoice_id: string;
   transaction_id: string;
-  amount_cents: number;
+  amount_cents: number | string;
   currency: string;
   entry_type: string;
   operation_id: string;
@@ -73,8 +73,8 @@ export interface AuditEvent {
 export interface Overview {
   total_invoices: number;
   total_transactions: number;
-  payment_volume: Record<string, number>;
-  reconciled_amount: Record<string, number>;
+  payment_volume: Record<string, number | string>;
+  reconciled_amount: Record<string, number | string>;
   pending_approvals: number;
   unresolved_exceptions: number;
   matching_rate: number;
@@ -90,7 +90,7 @@ export interface Investigation {
     recommended_action: string;
     supporting_invoice_ids: string[];
     supporting_transaction_ids: string[];
-    difference_cents: number | null;
+    difference_cents: number | string | null;
     requires_human_approval: boolean;
   };
   tool_trace: {

@@ -13,6 +13,7 @@ from app.config import Settings
 from app.db import Database
 from app.models import BankTransaction, FinancialException, Invoice, Proposal
 from app.schemas import ImportData
+from app.serialization import ExactJSONResponse
 from app.services.importing import DomainError, import_data
 from app.services.reconciliation import proposal_view, reconcile
 
@@ -29,7 +30,12 @@ def create_app(settings=None):
         yield
         db.engine.dispose()
 
-    app = FastAPI(title="ReconcileAI", version="0.1.0", lifespan=lifespan)
+    app = FastAPI(
+        title="ReconcileAI",
+        version="0.1.0",
+        lifespan=lifespan,
+        default_response_class=ExactJSONResponse,
+    )
     app.state.db = db
     app.state.settings = settings
     app.add_middleware(

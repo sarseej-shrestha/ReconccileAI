@@ -24,6 +24,8 @@ These labels were designed alongside the deterministic rules. They are a regress
 
 ## Reliability tests
 
+A separate precision test aggregates 9,008 transactions with individually valid cent amounts and verifies that totals beyond JavaScript’s safe integer range survive JSON parsing exactly. This is a correctness test, not a throughput benchmark.
+
 The backend suite exercises fixture labels, one-cent perturbations, sign and currency changes, conflicting references, duplicate detection, strict monetary inputs, atomic CSV imports, and repeat reconciliation. Approval tests cover authorization, rejection, stale versions, changed evidence, newly imported conflicts, forged allocations, and repeated decisions.
 
 Concurrency tests run six simultaneous posting requests against a file-backed SQLite database using both identical and distinct keys; only one two-entry split settlement takes effect. Four concurrent approvals produce one successful decision. Failure injection after ledger flush but before idempotency persistence proves that operation, ledger, invoice, and proposal changes roll back together. Another test tries to consume a transaction through a separate proposal.

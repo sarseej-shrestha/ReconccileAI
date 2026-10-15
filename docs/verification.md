@@ -2,7 +2,7 @@
 
 ## Local execution
 
-- **72 backend tests passed**, with zero failures. One upstream Starlette/AnyIO deprecation warning is present in the local environment.
+- **74 backend tests passed**, with zero failures. One upstream Starlette/AnyIO deprecation warning is present in the local environment.
 - Ruff lint and formatting checks passed for the backend, evaluation runner, and fixture generator.
 - Frontend ESLint, generated route types, strict TypeScript checking, and the Next.js production build passed.
 - The real browser workflow passed 11 checks: import, 11 deterministic proposals, investigation, approval, split settlement, zero-effect replay, rejection enforcement, CSV upload, audit export/filter, mobile layout, and absence of uncaught browser errors.
@@ -12,7 +12,7 @@
 
 ## Clean-install CI
 
-[GitHub Actions run 38688170027](https://github.com/sarseej-shrestha/ReconccileAI/actions/runs/38688170027) passed all three jobs on Ubuntu: backend installation/lint/tests/evaluation, frontend installation/lint/type checking/production build, and real-browser end-to-end verification. The run tested integrated commit `7e1ec99aa55da65adc8723cd28172dec361da898`. The final audit-provenance follow-up adds complete import snapshots and one additional backend test.
+[GitHub Actions run 38688170027](https://github.com/sarseej-shrestha/ReconccileAI/actions/runs/38688170027) passed all three jobs on Ubuntu: backend installation/lint/tests/evaluation, frontend installation/lint/type checking/production build, and real-browser end-to-end verification. The run tested integrated commit `7e1ec99aa55da65adc8723cd28172dec361da898`. Final correctness follow-ups add complete import snapshots and tests for exact JSON serialization beyond JavaScript’s safe integer range.
 
 ## Environment and reproducibility
 

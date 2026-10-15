@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-export function money(cents: number, currency = "USD") {
+export function money(cents: number | string, currency = "USD") {
   const value = BigInt(cents);
   const negative = value < 0n;
   const absolute = negative ? -value : value;
