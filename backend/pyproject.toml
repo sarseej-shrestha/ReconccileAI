@@ -7,12 +7,12 @@ name = "reconcileai"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "sqlalchemy>=2.0.38,<2.1",
-  "pydantic>=2.10,<3", "pydantic-settings>=2.7,<3", "httpx>=0.28,<1",
-  "python-multipart>=0.0.20,<1",
+  "fastapi==0.135.2", "uvicorn==0.42.0", "sqlalchemy==2.0.54",
+  "pydantic==2.14.0", "pydantic-settings==2.13.1", "httpx==0.28.1",
+  "python-multipart==0.0.22",
 ]
 [project.optional-dependencies]
-dev = ["pytest>=8.3,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1"]
+dev = ["pytest==9.1.1", "ruff==0.16.10"]
 [tool.setuptools.packages.find]
 include = ["app*"]
 [tool.pytest.ini_options]

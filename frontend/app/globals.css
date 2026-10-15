@@ -1208,5 +1208,15 @@ footer > span {
   }
 }
 
-.records .table-scroll { max-height: 430px; }
-@media (max-width: 600px) { .sidebar nav { display: grid; grid-template-columns: 1fr 1fr; } .nav-item { justify-content: flex-start; } }
+.records .table-scroll {
+  max-height: 430px;
+}
+@media (max-width: 600px) {
+  .sidebar nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .nav-item {
+    justify-content: flex-start;
+  }
+}

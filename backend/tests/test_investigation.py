@@ -149,3 +149,25 @@ def test_compatible_adapter_actual_json_and_tool_loop(loaded, monkeypatch):
     )
     assert result["source"] == "llm_validated"
     assert len(calls) == 2
+
+
+def test_history_follows_relational_provenance(loaded):
+    loaded.post("/api/reconcile")
+    with loaded.app.state.db.session() as session:
+        tools = ReadOnlyTools(session)
+        events = tools.call("retrieve_reconciliation_history", {"entity_id": "INV-010"})
+        assert {e["action"] for e in events} >= {"proposal_generated", "exception_identified"}
+
+
+def test_resolved_exception_cannot_be_reclassified_as_missing(loaded):
+    from test_ledger import approve, candidate, post
+
+    p = candidate(loaded)
+    exception = next(
+        e for e in loaded.get("/api/exceptions").json() if e["classification"] == "split_payment"
+    )
+    approve(loaded, p)
+    post(loaded, p)
+    response = loaded.post(f"/api/exceptions/{exception['id']}/investigate")
+    assert response.status_code == 409
+    assert "resolved" in response.json()["detail"]

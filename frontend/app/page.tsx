@@ -473,7 +473,7 @@ export default function Dashboard() {
                             <Tooltip cursor={{ fill: "#f1f5f9" }} />
                             <Bar
                               dataKey="count"
-                        isAnimationActive={false}
+                              isAnimationActive={false}
                               name="Proposals"
                               fill="#2563eb"
                               radius={[5, 5, 0, 0]}
@@ -1144,7 +1144,7 @@ export default function Dashboard() {
                 <Button
                   size="sm"
                   variant="outline"
-                  disabled={!!busy}
+                  disabled={!!busy || exception.status !== "OPEN"}
                   onClick={() => investigate(exception)}
                 >
                   Investigate evidence

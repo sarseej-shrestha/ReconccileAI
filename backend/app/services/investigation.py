@@ -7,7 +7,14 @@ import httpx
 from pydantic import Field, ValidationError
 from sqlalchemy import or_, select
 
-from app.models import AuditEvent, BankTransaction, FinancialException, Invoice, LedgerEntry
+from app.models import (
+    Allocation,
+    AuditEvent,
+    BankTransaction,
+    FinancialException,
+    Invoice,
+    LedgerEntry,
+)
 from app.schemas import Identifier, StrictModel
 from app.services.audit import audit
 from app.services.importing import DomainError
@@ -132,13 +139,34 @@ class ReadOnlyTools:
         }
 
     def retrieve_reconciliation_history(self, entity_id):
+        related = {entity_id}
+        related.update(
+            self.session.scalars(
+                select(Allocation.proposal_id).where(
+                    or_(Allocation.invoice_id == entity_id, Allocation.transaction_id == entity_id)
+                )
+            )
+        )
+        related.update(
+            self.session.scalars(
+                select(FinancialException.id).where(
+                    or_(
+                        FinancialException.invoice_id == entity_id,
+                        FinancialException.transaction_id == entity_id,
+                    )
+                )
+            )
+        )
         events = self.session.scalars(
             select(AuditEvent)
-            .where(AuditEvent.entity_id == entity_id)
+            .where(AuditEvent.entity_id.in_(related))
             .order_by(AuditEvent.id.desc())
             .limit(20)
         )
-        return [{"id": e.id, "action": e.action, "reason": e.reason} for e in events]
+        return [
+            {"id": e.id, "action": e.action, "entity_id": e.entity_id, "reason": e.reason}
+            for e in events
+        ]
 
     def definitions(self):
         return [
@@ -239,6 +267,8 @@ def investigate(db, exception_id, correlation_id, provider=None):
         exception = session.get(FinancialException, exception_id)
         if not exception:
             raise DomainError("Exception not found", 404)
+        if exception.status != "OPEN":
+            raise DomainError("Exception is resolved; inspect its ledger and audit history")
         audit(
             session,
             "investigation_requested",

@@ -33,9 +33,7 @@ class TransactionInput(StrictModel):
     id: Identifier
     external_reference: Identifier
     counterparty: Annotated[str, Field(min_length=1, max_length=200)]
-    amount_cents: Annotated[
-        int, Field(strict=True, ge=-1_000_000_000_000, le=1_000_000_000_000)
-    ]
+    amount_cents: Annotated[int, Field(strict=True, ge=-1_000_000_000_000, le=1_000_000_000_000)]
     currency: Currency
     date: date
     description: Annotated[str, Field(max_length=2000)]

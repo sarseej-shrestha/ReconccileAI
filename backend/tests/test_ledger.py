@@ -139,3 +139,34 @@ def test_failure_rolls_back_all_financial_effects(loaded, monkeypatch):
     assert loaded.get("/api/audit?action=ledger_writeback_failed").json()
     monkeypatch.setattr(ledger, "posting_result", real)
     assert post(loaded, p).json()["additional_entries"] == 2
+
+
+def test_transaction_cannot_be_consumed_by_a_second_proposal(loaded):
+    from app.models import Allocation
+
+    p = candidate(loaded, "INV-001")
+    approve(loaded, p)
+    assert post(loaded, p).status_code == 200
+    with loaded.app.state.db.session(write=True) as session:
+        first = session.get(Proposal, p["id"])
+        second = Proposal(
+            signature="forged-independent-signature",
+            matching_method=first.matching_method,
+            evidence=first.evidence,
+            proposed_amount_cents=first.proposed_amount_cents,
+            match_quality="high",
+        )
+        session.add(second)
+        session.flush()
+        session.add(
+            Allocation(
+                proposal_id=second.id,
+                invoice_id="INV-001",
+                transaction_id=p["transaction_ids"][0],
+                amount_cents=11000,
+            )
+        )
+        second_id = second.id
+    assert approve(loaded, {"id": second_id, "version": 1}).status_code == 409
+    assert post(loaded, {"id": second_id}, key="second-proposal-key").status_code == 409
+    assert len(loaded.get("/api/ledger").json()) == 1

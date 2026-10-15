@@ -1,0 +1,35 @@
+id,external_reference,counterparty,amount_cents,currency,date,description,source
+TX-001,FICTIONAL-0001,Fable Company 01,11000,USD,2026-09-15,INV-001,Fictional Demo Bank
+TX-002,FICTIONAL-0002,Fable Company 02,12000,USD,2026-09-15,INV-002,Fictional Demo Bank
+TX-003,FICTIONAL-0003,Fable Company 03,13000,USD,2026-09-15,INV-003,Fictional Demo Bank
+TX-004,FICTIONAL-0004,Fable Company 04,14000,USD,2026-09-15,INV-004,Fictional Demo Bank
+TX-005,FICTIONAL-0005,Fable Company 05,15000,USD,2026-09-15,INV-005,Fictional Demo Bank
+TX-006,FICTIONAL-0006,Fable Company 06,16000,USD,2026-09-15,INV-006,Fictional Demo Bank
+TX-007,FICTIONAL-0007,Fable Company 07,17000,USD,2026-09-15,INV-007,Fictional Demo Bank
+TX-008,FICTIONAL-0008,Fable Company 08,18000,USD,2026-09-15,INV-008,Fictional Demo Bank
+TX-009,FICTIONAL-0009,Fable Company 09,19000,USD,2026-09-15,Customer payment,Fictional Demo Bank
+TX-010,FICTIONAL-0010,Fable Company 10,75000,USD,2026-09-15,INV-010,Fictional Demo Bank
+TX-011,FICTIONAL-0011,Fable Company 10,50000,USD,2026-09-15,INV-010,Fictional Demo Bank
+TX-012,FICTIONAL-0012,Fable Company 11,21000,USD,2026-09-15,INV-011,Fictional Demo Bank
+TX-013,FICTIONAL-0013,Fable Company 11,21000,USD,2026-09-15,INV-011,Fictional Demo Bank
+TX-014,FICTIONAL-0014,Fable Company 13,150000,USD,2026-09-15,INV-013,Fictional Demo Bank
+TX-015,FICTIONAL-0015,Fable Company 14,10000,USD,2026-09-15,INV-014,Fictional Demo Bank
+TX-016,FICTIONAL-0016,Fable Company 14,5000,USD,2026-09-15,INV-014,Fictional Demo Bank
+TX-017,FICTIONAL-0017,Fable Company 15,17000,USD,2026-09-15,INV-015,Fictional Demo Bank
+TX-018,FICTIONAL-0018,Fable Company 16,26000,EUR,2026-09-15,INV-016,Fictional Demo Bank
+TX-019,FICTIONAL-0019,Fable Company 17,27000,USD,2026-09-15,INV-017 INV-018,Fictional Demo Bank
+TX-020,FICTIONAL-0020,Fable Orchard Labs,33000,USD,2026-09-15,Orchard payment,Fictional Demo Bank
+TX-021,FICTIONAL-0021,Fable Company 21,31000,USD,2025-01-10,INV-021,Fictional Demo Bank
+TX-022,FICTIONAL-0022,Fable Company 22,-32000,USD,2026-09-15,INV-022,Fictional Demo Bank
+TX-023,FICTIONAL-0023,Fable Company 23,-33000,USD,2026-09-15,INV-023,Fictional Demo Bank
+TX-024,FICTIONAL-0024,Fable Company 24,34000,USD,2026-09-15,INV-UNKNOWN,Fictional Demo Bank
+TX-025,FICTIONAL-0025,Fable Unknown 0,4000,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-026,FICTIONAL-0026,Fable Unknown 1,4100,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-027,FICTIONAL-0027,Fable Unknown 2,4200,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-028,FICTIONAL-0028,Fable Unknown 3,4300,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-029,FICTIONAL-0029,Fable Unknown 4,4400,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-030,FICTIONAL-0030,Fable Unknown 5,4500,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-031,FICTIONAL-0031,Fable Unknown 6,4600,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-032,FICTIONAL-0032,Fable Unknown 7,4700,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-033,FICTIONAL-0033,Fable Unknown 8,4800,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
+TX-034,FICTIONAL-0034,Fable Unknown 9,4900,USD,2026-09-15,Unallocated fictional receipt,Fictional Demo Bank
