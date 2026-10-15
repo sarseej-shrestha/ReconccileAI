@@ -67,7 +67,7 @@ def apply_proposal(
                 actor=actor,
                 reason=exc.message
                 if isinstance(exc, DomainError)
-                else "Financial constraint rejected posting",
+                else "Posting failed; financial transaction rolled back",
                 correlation_id=request.state.correlation_id,
             )
         raise

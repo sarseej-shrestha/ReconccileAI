@@ -14,6 +14,8 @@ class DomainError(Exception):
 
 def import_data(session, data: ImportData, correlation_id: str):
     counts = {"invoices": 0, "transactions": 0, "unchanged": 0}
+    created_records = {"invoices": [], "transactions": []}
+    unchanged_ids = {"invoices": [], "transactions": []}
     for model, rows, key in [
         (Invoice, data.invoices, "invoices"),
         (BankTransaction, data.transactions, "transactions"),
@@ -27,6 +29,7 @@ def import_data(session, data: ImportData, correlation_id: str):
                         f"Conflicting import for {item.id}; existing evidence is preserved"
                     )
                 counts["unchanged"] += 1
+                unchanged_ids[key].append(item.id)
                 continue
             unique_field = "invoice_number" if model is Invoice else "external_reference"
             if session.scalar(
@@ -36,7 +39,17 @@ def import_data(session, data: ImportData, correlation_id: str):
             session.add(model(**values))
             session.flush()
             counts[key] += 1
+            created_records[key].append({**item.model_dump(mode="json"), "status": "OPEN"})
     audit(
-        session, "data_imported", "dataset", "import", after=counts, correlation_id=correlation_id
+        session,
+        "data_imported",
+        "dataset",
+        "import",
+        after={
+            "counts": counts,
+            "created_records": created_records,
+            "unchanged_ids": unchanged_ids,
+        },
+        correlation_id=correlation_id,
     )
     return counts

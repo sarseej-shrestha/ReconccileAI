@@ -132,7 +132,7 @@ node scripts/browser-check.mjs
 
 The browser harness starts both real servers, uses a temporary SQLite database, performs the full operator workflow, checks rejection and replay safety, exports audit JSON, captures desktop/mobile screenshots, and stops its servers. Keep ports 8000 and 3000 free. `CHROMIUM_PATH` or `--browser /path/to/chromium` selects an existing browser; `REVIEW_OUTPUT` selects an artifact directory.
 
-**Verification:** 71 backend tests and an 11-check real-browser workflow passed locally and in [GitHub Actions](https://github.com/sarseej-shrestha/ReconccileAI/actions/runs/38688170027); frontend lint, type checking, and production build also passed.
+**Verification:** 72 backend tests and an 11-check real-browser workflow passed locally; frontend lint, type checking, and production build also passed. [GitHub Actions](https://github.com/sarseej-shrestha/ReconccileAI/actions/workflows/ci.yml) repeats backend, frontend, and browser verification from clean installations.
 
 [Measured evaluation results](evaluation/results.json): **11/11 expected candidate matches, zero false positives, zero false negatives, 100% precision and recall, 100% classification accuracy across 14 invoice exception cases, and 54.17% abstention across 24 invoices.** These are small, hand-labeled development-fixture results, not held-out production benchmarks or model accuracy claims. See [evaluation methodology](docs/evaluation.md).
 

@@ -84,3 +84,18 @@ def test_audit_orm_is_append_only(loaded):
     with pytest.raises(ValueError, match="append-only"):
         with loaded.app.state.db.session(write=True) as session:
             session.delete(session.scalars(select(AuditEvent)).first())
+
+
+def test_import_audit_reconstructs_original_evidence(loaded):
+    event = loaded.get("/api/audit?action=data_imported").json()[0]
+    state = event["new_state"]
+    assert len(state["created_records"]["invoices"]) == 24
+    assert len(state["created_records"]["transactions"]) == 34
+    split = next(i for i in state["created_records"]["invoices"] if i["id"] == "INV-010")
+    assert split["amount_cents"] == 125000
+    assert split["issue_date"] == "2026-09-01"
+    assert split["status"] == "OPEN"
+    loaded.post("/api/demo/load")
+    replay = loaded.get("/api/audit?action=data_imported").json()[0]["new_state"]
+    assert replay["created_records"] == {"invoices": [], "transactions": []}
+    assert len(replay["unchanged_ids"]["transactions"]) == 34

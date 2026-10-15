@@ -17,6 +17,6 @@
 ## Truthful resume bullets
 
 - Built ReconcileAI with FastAPI, SQLAlchemy, and Next.js, implementing 13 reconciliation scenarios and a guarded read-only investigator; achieved 11/11 expected matches with zero false positives on a labeled 24-invoice, 34-transaction synthetic fixture.
-- Engineered transactional approval and idempotent ledger workflows validated by 71 backend tests and an 11-check browser demo; six concurrent posting requests produced one settlement, and repeat writebacks created zero additional ledger entries.
+- Engineered transactional approval and idempotent ledger workflows validated by 72 backend tests and an 11-check browser demo; six concurrent posting requests produced one settlement, and repeat writebacks created zero additional ledger entries.
 
 The dataset figures describe a development fixture, not real customer traffic, production savings, or independently validated model performance.
